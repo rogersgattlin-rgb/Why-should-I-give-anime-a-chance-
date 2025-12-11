@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gattlin Rogers - Resume</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="assets/img/Personal Photo.JPG"/>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+  <!-- Custom Styles -->
+<style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(
+        to bottom right,
+        #1c2b4d,   /* Dark Blue */
+        #d3d3d3,   /* Light Grey */
+        #a8d5ba,   /* Light Green */
+        #f9d71c    /* Sunflower Yellow */
+      );
+      color: #222; /* Darker text for readability */
+    }
+    .navbar {
+      background-color: #1c2b4d;
+    }
+    .navbar-brand, .nav-link {
+      color: #f8f9fa !important;
+    }
+    .hero {
+      background: linear-gradient(135deg, #1c2b4d, #3c4f70);
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+    }
+    .resume-section {
+      padding: 60px 20px;
+padding: 60px 20px;
+      background-color: rgba(255, 255, 255, 0.55); /* Even more transparent */
+      backdrop-filter: blur(8px); /* Keeps text legible */
+      border-radius: 10px;
+      margin-bottom: 40px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Adds depth */
+    }
+    .section-title {
+      color: #1c2b4d;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+    .social-icons a {
+      margin: 0 10px;
+      color: #1c2b4d;
+      font-size: 1.5rem;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .social-icons a:hover {
+      color: #f9d71c;
+    }
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    ul li {
+padding: 8px 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    .scroll-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #1c2b4d;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      display: none;
+      z-index: 1000; /* Keeps button above content */
+    }
+    .scroll-top:hover {
+      background-color: #f9d71c;
+      color: #1c2b4d;
+    }
+    .profile-img {
+      width: 100%;
+      max-width: 250px;
+      height: auto;
+      border-radius: 10px;
+margin-top: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+   .other-link {
+  display: inline-block;
+  margin: 10px 0;
+  padding: 12px 20px;
+  background-color: rgba(28, 43, 77, 0.85); /* navy tone with transparency */
+  color: rgba(255, 255, 255, 0.7); /* semi-transparent white text */
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.25);
+  transition: all 0.3s ease;
+}
+
+.other-link:hover {
+  background-color: rgba(28, 43, 77, 0.85); /* keep navy tone */
+  color: rgba(0, 102, 255, 0.7); /* semi-transparent blue text */
+  transform: translateY(-2px);
+}
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Gattlin Rogers</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="#social">Social</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Other Sites</a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item" href="scratch.html">Who is the greatest superhero?</a></li>
+            </ul>
+ </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Gattlin Rogers</h1>
+    <p>Professional Resume & Portfolio</p>
+  </section>
+<!-- About Section -->
+  <section id="about" class="resume-section">
+    <div class="container text-center">
+      <h2 class="section-title">About Me</h2>
+      <p>
+        My name is Gattlin Rogers. I am from Gilbert, AZ. I graduated from American Leadership Academy and am currently attending Brigham Young University (BYU). I am passionate about professional growth, technical skills, and leadership opportunities. My background spans sales, management, and technical development, and I thrive in environments where I can combine analytical thinking with interpersonal communication.
+      </p>
+      <img src="assets/img/Personal Photo.JPG" alt="Portrait of Gattlin Rogers" class="profile-img" />
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="resume-section">
+    <div class="container">
+      <h2 class="section-title">Skills</h2>
+      <ul>
+        <li>Excel – PivotTables, advanced formulas</li>
+        <li>SQL – queries, joins, optimization</li>
+        <li>VBA – automation and macros</li>
+        <li>Website Development – HTML, CSS, JavaScript</li>
+      </ul>
+    </div>
+  </section>
+<!-- Experience Section -->
+  <section id="experience" class="resume-section">
+    <div class="container">
+      <h2 class="section-title">Work Experience</h2>
+      <ul>
+        <li><strong>Manager</strong> – Small Property Management Company (2025-Present)</li>
+        <li><strong>Professional Salesman</strong> – Pest Control Company (2023–2025)</li>
+        <li><strong>Appointment Setter</strong> – Solar Company (2023-2024)</li>
+        <li><strong>Lifeguard</strong> (2020-2021)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education" class="resume-section">
+    <div class="container">
+      <h2 class="section-title">Education</h2>
+      <p>Graduated from American Leadership Academy</p>
+      <p>Junior currently attending Brigham Young University (BYU)</p>
+    </div>
+  </section>
+<!-- Social Section -->
+  <section id="social" class="resume-section">
+    <div class="container">
+      <h2 class="section-title">Connect with Me</h2>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/share/1CPsdtSgGs/?mibextid=wwXIfr" target="_blank"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.instagram.com/gattlinrogers?igsh=MWs3dWltNjEzZTVycw%3D%3D&utm_source=qr" target="_blank"><i class="bi bi-instagram"></i></a>
+      </div>
+    </div>
+  </section> <!-- Other Sites Section -->
+<section id="other-sites" class="resume-section">
+  <div class="container text-center">
+    <h2 class="section-title">Other Relative Sites</h2>
+    <a href="index.html" target="_blank" class="other-link">Why should I give Anime a chance?</a>
+    <br>
+    <a href="hunt/DuckHunt.html" target="_blank" class="other-link">Duck Hunt</a>
+  </div>
+</section>
+  <!-- Scroll to Top Button -->
+  <button class="scroll-top" id="scrollTopBtn">&#8679;</button>
+
+  <!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr

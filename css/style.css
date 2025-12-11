@@ -1,0 +1,279 @@
+/* Basic styles for index.html */
+:root{
+  --bg:off-white;
+  --accent:#1c2b4d;
+  --muted:#666;
+}
+html,body{height:100%;margin:0;padding:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:var(--bg); color:var(--accent);}
+body{display:flex;flex-direction:column;align-items:stretch}
+.site-header{display:flex;align-items:flex-start;justify-content:flex-start;position:relative;background:linear-gradient(90deg,black(60% transparent);padding:20px 24px;border-bottom:1px solid #ddd}
+.site-header h1{margin:0;font-size:20px}
+.site-nav{position:absolute;right:24px;/* top will be set via JS to align vertically with a heading */}
+.site-nav a{margin-left:12px;color:var(--accent);text-decoration:none;font-weight:600}
+.container{max-width:900px;margin:28px auto;padding:0 16px}
+.site-footer{text-align:center;padding:18px 8px;margin-top:auto;background:transparent;color:var(--muted)}
+.other-link{display:inline-block;margin:6px 4px;padding:8px 12px;background:#fff;border-radius:6px;border:1px solid #ddd;color:var(--accent);text-decoration:none}
+button#actionBtn{background:#004080;color:#fff;border:none;padding:10px 14px;border-radius:8px;cursor:pointer}
+
+/* debug helper to show that CSS loaded */
+body::after{content:" ";display:block;height:0}
+
+/* Gallery styles */
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin-top:12px}
+.gallery-item{background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 6px 18px rgba(15,15,15,0.06);cursor:pointer;border:1px solid #eee}
+.gallery-item img{width:100%;height:140px;object-fit:cover;display:block;transition:transform .25s ease,filter .25s ease}
+.gallery-item:hover img{transform:scale(1.04);filter:brightness(1.03)}
+.gallery-item figcaption{padding:8px 10px;font-size:12px;color:var(--muted);text-align:center}
+
+/* Lightbox */
+.lightbox{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;visibility:hidden;opacity:0;transition:opacity .25s ease;z-index:9999}
+.lightbox.open{visibility:visible;opacity:1}
+.lightbox-backdrop{position:absolute;inset:0;background:rgba(0,0,0,0.6)}
+.lightbox-content{position:relative;z-index:2;max-width:90vw;max-height:90vh;padding:16px;background:transparent;display:flex;flex-direction:column;align-items:center}
+.lightbox-content img{max-width:calc(90vw - 40px);max-height:calc(90vh - 120px);border-radius:6px;box-shadow:0 10px 30px rgba(0,0,0,0.4)}
+.lightbox-close{position:absolute;right:8px;top:8px;z-index:3;background:rgba(0,0,0,0.6);color:#fff;border:none;border-radius:6px;padding:6px 8px;cursor:pointer}
+.lightbox-caption{margin-top:8px;color:#fff;background:rgba(0,0,0,0.35);padding:6px 10px;border-radius:6px;font-size:13px}
+
+@media (max-width:520px){
+  .gallery-item img{height:110px}
+}
+
+/* Scattered / stagnant images used for decorative placement */
+.decorative{
+  float:left;
+  max-width:180px;
+  width:28%;
+  margin:0 18px 12px 0;
+  opacity:0.85;
+  pointer-events:none;
+  border-radius:6px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.12);
+}
+.decorative.right{ float:right; margin:0 0 12px 18px; }
+.decorative.small{ max-width:100px; width:22%; }
+.decorative.medium{ max-width:140px; width:26%; }
+.decorative.large{ max-width:220px; width:34%; }
+@media (max-width:720px){
+  .decorative{ float:none; display:block; margin:12px auto; width:60%; }
+}
+
+  :root {
+    --bg: 16, 18, 27;         /* base background in RGB for translucency */
+    --accent: 82, 120, 247;   /* soft blue accent */
+    --text: 240, 240, 246;    /* near-white text */
+    --muted: 164, 170, 185;   /* muted text */
+  }
+
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: 245, 247, 252;
+      --accent: 50, 90, 220;
+      --text: 22, 25, 35;
+      --muted: 90, 96, 112;
+    }
+  }
+
+  .glass-section {
+    position: relative;
+    margin: 2rem auto;
+    padding: 1.25rem 1.25rem 1rem;
+    max-width: 860px;
+
+    background: linear-gradient(
+        180deg,
+        black (80% transparent),
+        black (80% transparent)
+      );
+    border: 1px solid rgba(var(--accent), 0.25);
+    border-radius: 14px;
+    backdrop-filter: blur(10px) saturate(1.05);
+    box-shadow:
+      0 8px 24px black,
+      inset 0 1px 0 black;
+  }
+
+  .glass-section::before {
+    /* subtle top sheen for depth */
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(
+      180deg,
+      white,
+      transparent 10%
+    );
+    pointer-events: none;
+  }
+
+  .glass-section h2 {
+    margin: 0 0 0.75rem;
+    font: 600 1.4rem/1.2 system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+    color: rgb(var(--text));
+    letter-spacing: 0.2px;
+  }
+
+  .reasons-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.6rem;
+  }
+
+  .reason {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.35rem 0.5rem;
+    align-items: start;
+    padding: 0.65rem 0.75rem;
+    border-radius: 10px;
+    background: rgba(var(--bg), 0.35);
+    border: 1px solid rgba(var(--accent), 0.18);
+    transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+  }
+
+  .reason:hover {
+    transform: translateY(-1px);
+    background: rgba(var(--bg), 0.42);
+    border-color: rgba(var(--accent), 0.28);
+  }
+
+  .reason strong {
+    color: rgb(var(--text));
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .reason span {
+    color: rgb(var(--muted));
+    line-height: 1.45;
+  }
+
+  /* Touch-friendly spacing on smaller screens */
+  @media (max-width: 640px) {
+    .glass-section {
+      padding: 1rem;
+      margin: 1.25rem auto;
+    }
+    .reason {
+      padding: 0.6rem 0.65rem;
+    }
+    .glass-section h2 {
+      font-size: 1.25rem;
+    }
+  }
+
+    
+  h1, h2, p, li {
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+  }
+h1, h2, p, li {
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+}
+
+h1{
+    color: black;
+}
+
+
+
+
+  body {
+    margin: 0;
+    padding: 0;
+    background-image: url('assets/img/space-vortex.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: off-white;
+  }
+/* Basic styles for index.html */
+:root{
+  --bg:#f8f9fb;
+  --accent:#1c2b4d;
+  --muted:#666;
+}
+html,body{height:100%;margin:0;padding:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:var(--bg); color:var(--accent);}
+body{display:flex;flex-direction:column;align-items:stretch}
+.site-header{display:flex;align-items:flex-start;justify-content:flex-start;position:relative;background:linear-gradient(90deg,#ffffff,#e6f0ff);padding:20px 24px;border-bottom:1px solid #ddd}
+.site-header h1{margin:0;font-size:20px}
+.site-nav{position:absolute;right:24px;/* top will be set via JS to align vertically with a heading */}
+.site-nav a{margin-left:12px;color:var(--accent);text-decoration:none;font-weight:600}
+.container{max-width:900px;margin:28px auto;padding:0 16px}
+.site-footer{text-align:center;padding:18px 8px;margin-top:auto;background:transparent;color:var(--muted)}
+.other-link{display:inline-block;margin:6px 4px;padding:8px 12px;background:#fff;border-radius:6px;border:1px solid #ddd;color:var(--accent);text-decoration:none}
+button#actionBtn{background:#004080;color:#fff;border:none;padding:10px 14px;border-radius:8px;cursor:pointer}
+
+/* debug helper to show that CSS loaded */
+body::after{content:" ";display:block;height:0}
+.nav a {
+  padding: 10px;
+}
+/* Gallery styles */
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin-top:12px}
+.gallery-item{background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 6px 18px rgba(15,15,15,0.06);cursor:pointer;border:1px solid #eee}
+.gallery-item img{width:100%;height:140px;object-fit:cover;display:block;transition:transform .25s ease,filter .25s ease}
+.gallery-item:hover img{transform:scale(1.04);filter:brightness(1.03)}
+.gallery-item figcaption{padding:8px 10px;font-size:12px;color:var(--muted);text-align:center}
+
+/* Lightbox */
+.lightbox{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;visibility:hidden;opacity:0;transition:opacity .25s ease;z-index:9999}
+.lightbox.open{visibility:visible;opacity:1}
+.lightbox-backdrop{position:absolute;inset:0;background:rgba(0,0,0,0.6)}
+.lightbox-content{position:relative;z-index:2;max-width:90vw;max-height:90vh;padding:16px;background:transparent;display:flex;flex-direction:column;align-items:center}
+.lightbox-content img{max-width:calc(90vw - 40px);max-height:calc(90vh - 120px);border-radius:6px;box-shadow:0 10px 30px rgba(0,0,0,0.4)}
+.lightbox-close{position:absolute;right:8px;top:8px;z-index:3;background:rgba(0,0,0,0.6);color:#fff;border:none;border-radius:6px;padding:6px 8px;cursor:pointer}
+.lightbox-caption{margin-top:8px;color:#fff;background:rgba(0,0,0,0.35);padding:6px 10px;border-radius:6px;font-size:13px}
+
+@media (max-width:520px){
+  .gallery-item img{height:110px}
+}
+.reason-box {
+  background-color: black; /* semi-transparent black */
+  padding: 20px;
+  border-radius: 12px;
+}
+/* background-color: rgba(75, 0, 130, 0.4);
+- Blurred glass effect: Add backdrop blur for a frosted overlay:
+background-color: rgba(255, 255, 255, 0.2);
+backdrop-filter: blur(8px);
+- Gradient transparency: Instead of a flat overlay, fade it:
+background: linear-gradient(
+  rgba(255, 182, 193, 0.6), 
+  rgba(255, 182, 193, 0.2)
+); */
+/* Container for your nav buttons */
+.nav-buttons {
+  position: absolute;   /* take them out of normal flow */
+  top: 0;               /* stick to the very top */
+  right: -1000;             /* stick to the very right */
+  display: flex;        /* line them up horizontally */
+  gap: 12px;            /* space between buttons */
+  padding: 10px;        /* breathing room from edges */
+}
+
+/* Style for individual buttons */
+.nav-buttons a {
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent background */
+  color: white;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+.site-nav {
+  position: fixed;   /* stays in place even when scrolling */
+  top: 20px;         /* 20px from the top */
+  right: -100px;       /* 20px from the right */
+  display: flex;     /* line them up horizontally */
+  gap: 12px;         /* spacing between links */
+  background: rgba(0,0,0,0.6); /* optional semi-transparent background */
+  padding: 10px 16px;
+  border-radius: 8px;
+  z-index: 1000;     /* make sure it sits above other content */
+}
+.div{
+  
+}
